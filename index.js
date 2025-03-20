@@ -31,7 +31,7 @@ app.use(helmet({
 const PORT = 3000 || process.env.PORT 
 
 app.get("/",(request,response)=>{
-    ///server to client
+    response.send("work");
     response.json({
         message : "Server is running " + PORT
     })
