@@ -23,7 +23,7 @@ const app = express()
 // }))
 app.use(express.json())
 app.use(cookieParser())
-app.use(morgan())
+// app.use(morgan())
 // app.use(helmet({
 //     crossOriginResourcePolicy : false
 // }))
@@ -31,7 +31,7 @@ app.use(morgan())
 const PORT = 3000 || process.env.PORT 
 
 app.get("/",(request,response)=>{
-    response.send("work");
+    // response.send("work");
     response.json({
         message : "Server is running " + PORT
     })
