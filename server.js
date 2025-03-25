@@ -17,18 +17,19 @@ import reviewRouter from './route/review.route.js'
 dotenv.config()
 
 const app = express()
-// app.use(cors({
-//     credentials : true,
-//     origin : process.env.FRONTEND_URL
-// }))
+app.use(cors({
+    credentials : true,
+    origin : process.env.FRONTEND_URL
+}))
 app.use(express.json())
 app.use(cookieParser())
-// app.use(morgan())
-// app.use(helmet({
-//     crossOriginResourcePolicy : false
-// }))
+app.use(morgan('dev'))
+app.use(helmet({
+    crossOriginResourcePolicy : false
+}))
 
-const PORT = 3000 || process.env.PORT 
+const PORT = process.env.PORT || 3000
+
 
 app.get("/",(request,response)=>{
     // response.send("work");
